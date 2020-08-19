@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MDP</string>
+    <string name="intent_message">Intent</string>
+</resources>
