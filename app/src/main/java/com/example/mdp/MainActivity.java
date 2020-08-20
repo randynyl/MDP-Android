@@ -13,8 +13,10 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            Fragment fragment = new MainBottomFragment();
-            doBottomFragmentTransaction(fragment, "bottom_main", false, "");
+            Fragment topFragment = new MainTopFragment();
+            doTopFragmentTransaction(topFragment, "top_main", false, "");
+            Fragment bottomFragment = new MainBottomFragment();
+            doBottomFragmentTransaction(bottomFragment, "bottom_main", false, "");
         }
     }
 
@@ -59,6 +61,27 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             MainTopFragment topFragment = new MainTopFragment();
             doTopFragmentTransaction(topFragment, fragmentTag, false, message);
             MainBottomFragment bottomFragment = new MainBottomFragment();
+            doBottomFragmentTransaction(bottomFragment, fragmentTag, false, message);
+        }
+
+        else if (fragmentTag.equals("reconfig")) {
+            ReconfigTopFragment topFragment = new ReconfigTopFragment();
+            doTopFragmentTransaction(topFragment, fragmentTag, true, message);
+            ReconfigBottomFragment bottomFragment = new ReconfigBottomFragment();
+            doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
+        }
+
+        else if (fragmentTag.equals("reconfig_select")) {
+            ReconfigSelectTopFragment topFragment = new ReconfigSelectTopFragment();
+            doTopFragmentTransaction(topFragment, fragmentTag, true, message);
+            ReconfigSelectBottomFragment bottomFragment = new ReconfigSelectBottomFragment();
+            doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
+        }
+
+        else if(fragmentTag.equals("back_config")) {
+            ReconfigTopFragment topFragment = new ReconfigTopFragment();
+            doTopFragmentTransaction(topFragment, fragmentTag, false, message);
+            ReconfigBottomFragment bottomFragment = new ReconfigBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, false, message);
         }
 

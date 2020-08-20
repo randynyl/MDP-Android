@@ -11,11 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class MainBottomFragment extends Fragment {
-
+public class ReconfigSelectBottomFragment extends Fragment {
     private IMainActivity mIMainActivity;
 
-    private Button BluetoothBtn, ReconfigBtn, WaypointBtn;
+    private Button confirmReconfigBtn, backBtn;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,32 +24,20 @@ public class MainBottomFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main_bottom, container, false);
-        BluetoothBtn = view.findViewById(R.id.button_bluetooth);
-        ReconfigBtn = view.findViewById(R.id.button_reconfig);
-        WaypointBtn = view.findViewById(R.id.button_waypoint);
+        View view = inflater.inflate(R.layout.fragment_confirm_reconfig, container, false);
 
-        BluetoothBtn.setOnClickListener(new View.OnClickListener() {
+        confirmReconfigBtn = view.findViewById(R.id.button_reconfig_confirm);
+        backBtn = view.findViewById(R.id.button_back_config);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIMainActivity.inflateFragment("bluetooth", "");
+                mIMainActivity.inflateFragment("back_config", "");
             }
         });
 
-        ReconfigBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mIMainActivity.inflateFragment("reconfig", "");
-            }
-        });
         return view;
     }
-
-
-
-
-
-
 
     @Override
     public void onAttach(@NonNull Context context) {

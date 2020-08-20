@@ -10,11 +10,11 @@
 
     <FrameLayout
         android:id="@+id/fragment_container_top"
-        android:layout_width="690dp"
-        android:layout_height="920dp"
+        android:layout_width="480dp"
+        android:layout_height="640dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/colorDarkGrey" />
 
     <FrameLayout
