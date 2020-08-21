@@ -7,9 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a61b22-8b95-4261-b3ab-4272a22ce0dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/menu/menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/BluetoothMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/actvity_bluetoothmain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/menu/menu1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/menu/menu2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mdp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
+        <option value="layoutResourceFile" />
         <option value="resourceFile" />
       </list>
     </option>
@@ -52,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Final Year Project/Learning open cv andriod studio/4.Image manipulations/Project/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Final Year Project/Learning android studio/2.multiscreen,external/app" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
@@ -137,30 +143,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="96" key="AndroidCreateResourceDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1597984653301" />
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1597985261410">
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1597988039488">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1597985261410" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1597985397291">
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1597988039488" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1597987333045">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597985397291" />
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1597986395875">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597987333045" />
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1597987975119">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597986395875" />
-    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1597986395874">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597987975119" />
+    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1597987975118">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597986395874" />
-    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1597986395874">
+    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597987975118" />
+    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1597987975118">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597986395874" />
-    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1597986395875">
+    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597987975118" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1597987975119">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597986395875" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597987975119" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1597984993951">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

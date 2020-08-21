@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             case R.id.bluetooth:
 
 
-                Intent intent = new Intent(MainActivity.this, BluetoothTopFragment.class);
+                Intent intent = new Intent(getApplicationContext(), BluetoothMain.class);
                 //intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
 
 
 
-                Intent intent = new Intent(MainActivity.this, ReconfigBottomFragment.class);
+                Intent intent = new Intent(getApplicationContext(), ReconfigBottomFragment.class);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
         }
