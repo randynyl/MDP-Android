@@ -1,6 +1,9 @@
 package com.example.mdp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -18,6 +21,39 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             Fragment bottomFragment = new MainBottomFragment();
             doBottomFragmentTransaction(bottomFragment, "bottom_main", false, "");
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            //ONCLICK BLUETOOTH SEARCH BUTTON
+            case R.id.bluetooth:
+
+
+                Intent intent = new Intent(MainActivity.this, BluetoothTopFragment.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+
+        }
+
+        switch (item.getItemId()) {
+            case R.id.reconfigure:
+
+
+
+                Intent intent = new Intent(MainActivity.this, ReconfigBottomFragment.class);
+                // intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void doTopFragmentTransaction(Fragment fragment, String tag, boolean addToBackStack, String message){
