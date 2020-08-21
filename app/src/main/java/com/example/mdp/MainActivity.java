@@ -1,10 +1,10 @@
 package com.example.mdp;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements IMainActivity {
 
@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             doBottomFragmentTransaction(bottomFragment, "bottom_main", false, "");
         }
     }
-
 
     private void doTopFragmentTransaction(Fragment fragment, String tag, boolean addToBackStack, String message){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
