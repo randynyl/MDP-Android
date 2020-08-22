@@ -1,5 +1,6 @@
 package com.example.mdp;
 
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,7 +8,13 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class BluetoothMain extends AppCompatActivity {
+    private static final String TAG = "BluetoothMain";
+
+    public ArrayList<BluetoothDevice> BTDeviceList = new ArrayList<>();
+    public ArrayList<BluetoothDevice> BTPairedDevicesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
