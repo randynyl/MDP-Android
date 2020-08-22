@@ -38,9 +38,7 @@ public class BluetoothMain extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.reconfigure:
-
-
-
+                
                 Intent intent = new Intent(getApplicationContext(), ReconfigBottomFragment.class);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
