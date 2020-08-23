@@ -7,7 +7,7 @@
     tools:context=".BluetoothMain">
 
     <TextView
-        android:id="@+id/deviceSearchStatus"
+        android:id="@+id/BTDevice"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.033" />
 
     <TextView
-        android:id="@+id/pairedDeviceText"
+        android:id="@+id/pairedDevice"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.033" />
 
     <ListView
-        android:id="@+id/listNewDevice"
+        android:id="@+id/listDevice"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.147" />
 
     <ListView
-        android:id="@+id/pairedDeviceList"
+        android:id="@+id/listPairedDevice"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
@@ -162,7 +162,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/messageText"
+        android:id="@+id/sendMsg"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
@@ -183,7 +183,7 @@
         app:layout_constraintVertical_bias="0.709" />
 
     <TextView
-        android:id="@+id/incomingText"
+        android:id="@+id/receiveMsg"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginStart="328dp"

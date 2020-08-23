@@ -7,14 +7,22 @@
       </config>
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="11a61b22-8b95-4261-b3ab-4272a22ce0dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/DeviceListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/device_adapter_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/BluetoothChat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/BluetoothConnectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mdp/BluetoothMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/BluetoothMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mdp/DeviceListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/DeviceListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mdp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mdp/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/actvity_bluetoothmain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/actvity_bluetoothmain.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,9 +65,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="R58N31ZN6MA" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-23T07:01:21.062Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Final Year Project/Learning android studio/2.multiscreen,external/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Project Testing/Bluetooth test/app" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
@@ -140,6 +151,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1597970904614" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598162460913">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1598162460913" />
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1598158240917">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1598158240917" />
     <state x="221" y="96" key="AndroidCreateResourceDirectoryDialog" timestamp="1597984653301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -148,26 +167,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1598067393278" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1597987333045">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1598163791605">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597987333045" />
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1598065484442">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598163791605" />
+    <state width="1236" height="179" key="GridCell.Tab.0.bottom" timestamp="1598166206968">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598065484442" />
-    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1598065484442">
+    <state width="1236" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598166206968" />
+    <state width="1236" height="179" key="GridCell.Tab.0.center" timestamp="1598166206968">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598065484441" />
-    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1598065484441">
+    <state width="1236" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598166206968" />
+    <state width="1236" height="179" key="GridCell.Tab.0.left" timestamp="1598166206968">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598065484441" />
-    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1598065484442">
+    <state width="1236" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598166206968" />
+    <state width="1236" height="179" key="GridCell.Tab.0.right" timestamp="1598166206968">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598065484442" />
+    <state width="1236" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598166206968" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1597984993951">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -180,5 +199,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="336" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1598066909826" />
+    <state x="348" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1598152693526">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="348" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1598152693526" />
   </component>
 </project>

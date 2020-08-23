@@ -1,20 +1,49 @@
 package com.example.mdp;
 
+import android.app.AlertDialog;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements IMainActivity {
+    private static final String TAG = "MainActivity";
+    BluetoothDevice myBTConnectionDevice;
+
+    static String connectedDevice;
+    boolean connectedState;
+    boolean currentActivity;
+
+    //UUID
+    private static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        connectedDevice = null;
+        connectedState = false;
+        currentActivity = true;
+
+        //REGISTER BROADCAST RECEIVER FOR INCOMING MSG
+        LocalBroadcastManager.getInstance(this).registerReceiver(btConnectionReceiver, new IntentFilter("btConnectionStatus"));
+        //LocalBroadcastManager.getInstance(this).registerReceiver(incomingMsgReceiver, new IntentFilter("IncomingMsg"));
+
         if (savedInstanceState == null) {
             Fragment topFragment = new MainTopFragment();
             doTopFragmentTransaction(topFragment, "top_main", false, "");
@@ -55,6 +84,73 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //BROADCAST RECEIVER FOR BLUETOOTH CONNECTION STATUS
+    BroadcastReceiver btConnectionReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            Log.d(TAG, "Receiving btConnectionStatus Msg!!!");
+
+            String connectionStatus = intent.getStringExtra("ConnectionStatus");
+            myBTConnectionDevice = intent.getParcelableExtra("Device");
+            //myBTConnectionDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            //DISCONNECTED FROM BLUETOOTH CHAT
+            if (connectionStatus.equals("disconnect")) {
+
+                Log.d("MainActivity:", "Device Disconnected");
+                connectedDevice = null;
+                connectedState = false;
+             //   connectionStatusBox.setText(R.string.btStatusOffline);
+
+                if (currentActivity) {
+
+                    //RECONNECT DIALOG MSG
+                    AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                    alertDialog.setTitle("BLUETOOTH DISCONNECTED");
+                    alertDialog.setMessage("Connection with device: '" + myBTConnectionDevice.getName() + "' has ended. Do you want to reconnect?");
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    //START BT CONNECTION SERVICE
+                                    Intent connectIntent = new Intent(MainActivity.this, BluetoothConnectionService.class);
+                                    connectIntent.putExtra("serviceType", "connect");
+                                    connectIntent.putExtra("device", myBTConnectionDevice);
+                                    connectIntent.putExtra("id", myUUID);
+                                    startService(connectIntent);
+                                }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+
+                }
+            }
+            //SUCCESSFULLY CONNECTED TO BLUETOOTH DEVICE
+            else if (connectionStatus.equals("connect")) {
+
+                connectedDevice = myBTConnectionDevice.getName();
+                connectedState = true;
+                Log.d("MainActivity:", "Device Connected " + connectedState);
+               // connectionStatusBox.setText(connectedDevice);
+                Toast.makeText(MainActivity.this, "Connection Established: " + myBTConnectionDevice.getName(),
+                        Toast.LENGTH_LONG).show();
+            }
+
+            //BLUETOOTH CONNECTION FAILED
+            else if (connectionStatus.equals("connectionFail")) {
+                Toast.makeText(MainActivity.this, "Connection Failed: " + myBTConnectionDevice.getName(),
+                        Toast.LENGTH_LONG).show();
+            }
+
+        }
+    };
+
 
     private void doTopFragmentTransaction(Fragment fragment, String tag, boolean addToBackStack, String message){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
