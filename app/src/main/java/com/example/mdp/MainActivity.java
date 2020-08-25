@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         switch (item.getItemId()) {
             case R.id.reconfigure:
 
+                inflateFragment("reconfig", "");
 
-
-                Intent intent = new Intent(getApplicationContext(), ReconfigBottomFragment.class);
+                //Intent intent = new Intent(getApplicationContext(), ReconfigBottomFragment.class);
                 // intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(intent);
+                //startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -186,34 +186,31 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             doTopFragmentTransaction(topFragment, fragmentTag, true, message);
             BluetoothBottomFragment bottomFragment = new BluetoothBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
-        }
-
-        else if (fragmentTag.equals("backToMain")) {
+        } else if (fragmentTag.equals("backToMain")) {
             MainTopFragment topFragment = new MainTopFragment();
             doTopFragmentTransaction(topFragment, fragmentTag, false, message);
             MainBottomFragment bottomFragment = new MainBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, false, message);
-        }
-
-        else if (fragmentTag.equals("reconfig")) {
+        } else if (fragmentTag.equals("reconfig")) {
             ReconfigTopFragment topFragment = new ReconfigTopFragment();
             doTopFragmentTransaction(topFragment, fragmentTag, true, message);
             ReconfigBottomFragment bottomFragment = new ReconfigBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
-        }
-
-        else if (fragmentTag.equals("reconfig_select")) {
+        } else if (fragmentTag.equals("reconfig_select")) {
             ReconfigSelectTopFragment topFragment = new ReconfigSelectTopFragment();
             doTopFragmentTransaction(topFragment, fragmentTag, true, message);
             ReconfigSelectBottomFragment bottomFragment = new ReconfigSelectBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
-        }
-
-        else if(fragmentTag.equals("back_config")) {
+        } else if (fragmentTag.equals("back_config")) {
             ReconfigTopFragment topFragment = new ReconfigTopFragment();
             doTopFragmentTransaction(topFragment, fragmentTag, false, message);
             ReconfigBottomFragment bottomFragment = new ReconfigBottomFragment();
             doBottomFragmentTransaction(bottomFragment, fragmentTag, false, message);
+        } else if (fragmentTag.equals("waypoint")) {
+            WaypointTopFragment topFragment = new WaypointTopFragment();
+            doTopFragmentTransaction(topFragment, fragmentTag, true, message);
+            WaypointBottomFragment bottomFragment = new WaypointBottomFragment();
+            doBottomFragmentTransaction(bottomFragment, fragmentTag, true, message);
         }
 
     }

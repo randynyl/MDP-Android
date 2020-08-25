@@ -6,24 +6,39 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button_reconfig_confirm"
-        android:layout_width="180dp"
-        android:layout_height="80dp"
+        android:id="@+id/button_waypoint_confirm"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/round_button_red"
         android:gravity="center_vertical|center_horizontal"
         android:text="Confirm"
         android:textColor="#fff"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_back_config"
+        app:layout_constraintEnd_toStartOf="@+id/button_waypoint_clear"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_back_config"
-        android:layout_width="180dp"
-        android:layout_height="80dp"
+        android:id="@+id/button_waypoint_clear"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/round_button_green"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Clear"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_waypoint_back"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_waypoint_confirm"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_waypoint_back"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:background="@drawable/round_button_blue"
         android:gravity="center_vertical|center_horizontal"
         android:text="Back"
@@ -32,7 +47,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_reconfig_confirm"
+        app:layout_constraintStart_toEndOf="@+id/button_waypoint_clear"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
