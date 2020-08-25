@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,10 +15,16 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 public class MainBottomFragment extends Fragment {
-
+    private FragmentMainBottomListener listener;
     private IMainActivity mIMainActivity;
     private SwitchCompat updateSwitchCompat;
     private Button exploreBtn, shortestPathBtn, waypointBtn, updateBtn;
+    private ImageButton upBtn, downBtn, leftBtn, rightBtn;
+    private static final String UP = "up", DOWN = "down", LEFT = "left", RIGHT = "right";
+
+    public interface FragmentMainBottomListener{
+        void onInputMainBottomSent(String direction);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +76,10 @@ public class MainBottomFragment extends Fragment {
             }
         });
 
+        upBtn = view.findViewById(R.id.up_arrow);
+        downBtn = view.findViewById(R.id.down_arrow);
+        leftBtn = view.findViewById(R.id.left_arrow);
+        rightBtn = view.findViewById(R.id.right_arrow);
 
         exploreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,18 +94,57 @@ public class MainBottomFragment extends Fragment {
                 //run shortest path
             }
         });
+
+        upBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String direction = UP;
+                listener.onInputMainBottomSent(direction);
+            }
+        });
+
+        downBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String direction = DOWN;
+                listener.onInputMainBottomSent(direction);
+            }
+        });
+
+        leftBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String direction = LEFT;
+                listener.onInputMainBottomSent(direction);
+            }
+        });
+
+        rightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String direction = RIGHT;
+                listener.onInputMainBottomSent(direction);
+            }
+        });
         return view;
     }
-
-
-
-
-
-
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mIMainActivity = (IMainActivity) getActivity();
+        if (context instanceof FragmentMainBottomListener) {
+            listener = (FragmentMainBottomListener) context;
+        }
+        else {
+            throw new RuntimeException(context.toString() + "FragmentMBFListener has not been implemented!");
+            }
+        }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
+
 }
