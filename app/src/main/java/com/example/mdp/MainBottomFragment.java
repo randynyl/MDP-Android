@@ -1,6 +1,7 @@
 package com.example.mdp;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +11,14 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 public class MainBottomFragment extends Fragment {
     private FragmentMainBottomListener listener;
     private IMainActivity mIMainActivity;
-    private Button BluetoothBtn, ReconfigBtn, WaypointBtn;
+    private SwitchCompat updateSwitchCompat;
+    private Button exploreBtn, shortestPathBtn, waypointBtn, updateBtn;
     private ImageButton upBtn, downBtn, leftBtn, rightBtn;
     private static final String UP = "up", DOWN = "down", LEFT = "left", RIGHT = "right";
 
@@ -32,25 +35,63 @@ public class MainBottomFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_bottom, container, false);
-        BluetoothBtn = view.findViewById(R.id.button_bluetooth);
-        ReconfigBtn = view.findViewById(R.id.button_reconfig);
-        WaypointBtn = view.findViewById(R.id.button_waypoint);
+        exploreBtn = view.findViewById(R.id.button_explore);
+        shortestPathBtn = view.findViewById(R.id.button_shortest_path);
+        waypointBtn = view.findViewById(R.id.button_waypoint);
+        updateBtn = view.findViewById(R.id.button_update);
+        updateSwitchCompat = view.findViewById(R.id.switchButtonUpdate);
+
+        //Save switch state
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("save", Context.MODE_PRIVATE);
+        updateSwitchCompat.setChecked(sharedPreferences.getBoolean("value", true));
+        updateBtn.setVisibility(sharedPreferences.getInt("visibility", View.VISIBLE));
+
+        updateSwitchCompat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if (updateSwitchCompat.isChecked()){
+                    // Auto update
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences("save", Context.MODE_PRIVATE).edit();
+                    editor.putBoolean("value", true);
+                    editor.putInt("visibility", View.GONE);
+                    editor.apply();
+                    updateSwitchCompat.setChecked(true);
+                    updateBtn.setVisibility(View.GONE);
+                } else {
+                    // Manual update
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences("save", Context.MODE_PRIVATE).edit();
+                    editor.putBoolean("value", false);
+                    editor.putInt("visibility", View.VISIBLE);
+                    editor.apply();
+                    updateSwitchCompat.setChecked(false);
+                    updateBtn.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        waypointBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIMainActivity.inflateFragment("waypoint", "");
+            }
+        });
+
         upBtn = view.findViewById(R.id.up_arrow);
         downBtn = view.findViewById(R.id.down_arrow);
         leftBtn = view.findViewById(R.id.left_arrow);
         rightBtn = view.findViewById(R.id.right_arrow);
 
-        BluetoothBtn.setOnClickListener(new View.OnClickListener() {
+        exploreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIMainActivity.inflateFragment("bluetooth", "");
+                //run explore
             }
         });
 
-        ReconfigBtn.setOnClickListener(new View.OnClickListener() {
+        shortestPathBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIMainActivity.inflateFragment("reconfig", "");
+                //run shortest path
             }
         });
 

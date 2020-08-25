@@ -11,10 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class ReconfigSelectTopFragment extends Fragment {
+public class WaypointTopFragment extends Fragment {
     private IMainActivity mIMainActivity;
-    private EditText f1Value, f2Value;
 
+    private EditText editTextX, editTextY;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,11 +24,9 @@ public class ReconfigSelectTopFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_reconfig_selected, container, false);
-
-        f1Value = view.findViewById(R.id.editText_f1);
-        f2Value = view.findViewById(R.id.editText_f1);
-
+        View view = inflater.inflate(R.layout.fragment_waypoint_top, container, false);
+        editTextX = view.findViewById(R.id.editTextX);
+        editTextY = view.findViewById(R.id.editTextY);
         return view;
     }
 
