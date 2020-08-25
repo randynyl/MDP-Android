@@ -20,13 +20,16 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity implements IMainActivity {
+public class MainActivity extends AppCompatActivity implements IMainActivity, MainBottomFragment.FragmentMainBottomListener {
     private static final String TAG = "MainActivity";
     BluetoothDevice myBTConnectionDevice;
 
     static String connectedDevice;
     boolean connectedState;
     boolean currentActivity;
+
+    private MainTopFragment mainTopFragment;
+    private MainBottomFragment mainBottomFragment;
 
     //UUID
     private static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
@@ -50,6 +53,19 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             Fragment bottomFragment = new MainBottomFragment();
             doBottomFragmentTransaction(bottomFragment, "bottom_main", false, "");
         }
+
+        mainTopFragment = new MainTopFragment();
+        mainBottomFragment = new MainBottomFragment();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container_top, mainTopFragment)
+                .replace(R.id.fragment_container_bottom, mainBottomFragment)
+                .commit();
+    }
+
+    @Override
+    public void onInputMainBottomSent(String direction) {
+        mainTopFragment.moveRobot(direction);
     }
 
     @Override
