@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
 public class BluetoothChat {
 
     private static final String TAG = "BluetoothChat";
-    // private ConnectedThread myConnectedThread;
+
     private static Context myContext;
 
     private static BluetoothSocket mySocket;
@@ -90,9 +90,7 @@ public class BluetoothChat {
         }
     }
 
-    /*
-    //CALL THIS FROM MAIN ACTIVITY TO SEND DATA TO REMOTE DEVICE (ROBOT)//
-    */
+    //CALL THIS FROM MAIN ACTIVITY TO SEND DATA TO REMOTE DEVICE (ROBOT)
     public static void write(byte[] bytes) {
 
         String text = new String(bytes, Charset.defaultCharset());
@@ -116,31 +114,22 @@ public class BluetoothChat {
     }
 
 
-
     //METHOD TO START CHAT SERVICE
     static void connected(BluetoothSocket mySocket, BluetoothDevice myDevice, Context context) {
         Log.d(TAG, "Connected: Starting");
 
-        //showToast("Connection Established With: "+myDevice.getName());
         myBluetoothConnectionDevice = myDevice;
         myContext = context;
-        //Start thread to manage the connection and perform transmissions
         startChat(mySocket);
 
 
     }
 
-    /*
-    //WRITE TO CONNECTEDTHREAD IN AN UNSYNCHRONIZED MANNER
-    */
+
     public static void writeMsg(byte[] out) {
 
-        // Create temporary object
-        // ConnectedThread temp;
-
-        // Synchronize a copy of the ConnectedThread
         Log.d(TAG, "write: Write Called.");
-        //perform the write
+
         write(out);
 
     }

@@ -1,22 +1,14 @@
 package com.example.mdp;
 
-import android.app.AlertDialog;
 import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.util.UUID;
 
@@ -44,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity, Ma
         currentActivity = true;
 
         //REGISTER BROADCAST RECEIVER FOR INCOMING MSG
-        LocalBroadcastManager.getInstance(this).registerReceiver(btConnectionReceiver, new IntentFilter("btConnectionStatus"));
+       // LocalBroadcastManager.getInstance(this).registerReceiver(btConnectionReceiver, new IntentFilter("btConnectionStatus"));
         //LocalBroadcastManager.getInstance(this).registerReceiver(incomingMsgReceiver, new IntentFilter("IncomingMsg"));
 
         if (savedInstanceState == null) {
@@ -102,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity, Ma
     }
 
     //BROADCAST RECEIVER FOR BLUETOOTH CONNECTION STATUS
+    /*
     BroadcastReceiver btConnectionReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -167,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity, Ma
         }
     };
 
-
+*/
     private void doTopFragmentTransaction(Fragment fragment, String tag, boolean addToBackStack, String message){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if(!message.equals("")){
