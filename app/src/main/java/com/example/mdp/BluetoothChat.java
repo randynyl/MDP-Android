@@ -65,7 +65,7 @@ public class BluetoothChat {
                 Log.d(TAG, "InputStream: " + incomingMessage);
 
                 //BROADCAST INCOMING MSG
-                Intent incomingMsgIntent = new Intent("IncomingMsg");
+                Intent incomingMsgIntent = new Intent("receiveMsg");
                 incomingMsgIntent.putExtra("receivingMsg", incomingMessage);
                 LocalBroadcastManager.getInstance(myContext).sendBroadcast(incomingMsgIntent);
 
